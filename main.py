@@ -51,7 +51,8 @@ class InternetSpeedBot:
         self.driver.find_element(By.XPATH,'//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div').click() #Login button
         time.sleep(3)
         tweet=f'Your company promised this download/upload speed:{PROMISED_DOWN}/{PROMISED_UP} but I am getting this speed download/upload{self.down}/{self.up} {ISP_PROVIDER_TWITTER}'
-        self.driver.find_element(By.CSS_SELECTOR,'.DraftEditor-editorContainer div').send_keys('tweet') #tweet compose
+      
+        self.driver.find_element(By.CSS_SELECTOR,'.DraftEditor-editorContainer div').send_keys(tweet) #tweet compose
 
         self.driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[3]/div/div/div[2]/div[3]/div').click() #Tweet button
         self.driver.quit()
